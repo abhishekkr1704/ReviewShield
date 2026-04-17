@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-<style>
+<style>cf
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
   --bg:#0f0f13;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0f8;--sub:#888;
@@ -341,7 +341,7 @@ body.amazon .nav-logo{color:#FF9900;}
         <span id="platform-indicator-text">Detected platform</span>
       </div>
       <div class="url-input-row">
-        <input class="url-input" id="url-input" type="text" placeholder="Paste product URL here… e.g. amazon.in/product/..." oninput="onUrlInput(this.value)"/>
+        <input class="url-input" id="url-input" type="text" placeholder="Paste product URL here… e.g. amazon.in/product/..." oninput="onUrlInput(this.value)" onkeypress="if(event.key === 'Enter' && !document.getElementById('analyze-btn').disabled) startAnalysis()"/>
         <button class="detect-btn" id="analyze-btn" onclick="startAnalysis()" disabled>Analyze →</button>
       </div>
       <div class="url-hint">✓ Works with Amazon, Flipkart, Meesho, Myntra, Snapdeal and more</div>

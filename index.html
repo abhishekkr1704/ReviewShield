@@ -731,7 +731,7 @@ function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 async function generateResults(platform, url, productName) {
   try {
-    const resp = await fetch('http://localhost:5000/api/analyze', {
+    const resp = await fetch('/api/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: url }) 

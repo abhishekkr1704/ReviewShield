@@ -3,6 +3,15 @@ const path = require('path');
 const cors = require('cors'); 
 const app = express();
 
+// --- UPDATED CORS CONFIGURATION ---
+// This tells your backend to only accept requests from your live Vercel site
+app.use(cors({
+    origin: 'https://reviewshield-site.vercel.app' 
+}));
+
+// Allow parsing of JSON data
+app.use(express.json());
+
 // Serve your static files (like your images or external CSS if you have any)
 app.use(express.static(__dirname));
 
@@ -12,9 +21,6 @@ app.get('/', (req, res) => {
 });
 
 const PORT = 5000;
-
-app.use(cors()); 
-app.use(express.json());
 
 // Check route
 app.get('/api/message', (req, res) => {
